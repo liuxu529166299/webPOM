@@ -14,6 +14,6 @@ def runner():
     # 发送html格式的测试报告邮件
     sendEmail().send()
 
-
+# 修改
 if __name__ == '__main__':
     runner()
