@@ -8,7 +8,7 @@
 """
 import unittest
 
-from ddt import ddt, unpack, file_data
+import ddt
 from page_object.login_page import LoginPage
 from selenium import webdriver
 from time import sleep
@@ -16,7 +16,7 @@ from chrome_options.options import Options
 import yaml
 
 
-@ddt
+@ddt.ddt()
 class Test1Case(unittest.TestCase):
     def setUp(self) -> None:
         self.driver = webdriver.Chrome(options=Options().conf_option())
@@ -27,11 +27,11 @@ class Test1Case(unittest.TestCase):
         lp = LoginPage(self.driver, LoginPage.url)
         self.assertTrue(lp.assert_text('liuxu', '111111'))
 
-    @file_data('./data/data.yaml')
-    def test_1(self, name, pwd):
+    @ddt.file_data(r'./data/data.yaml')
+    def test_1(self, **data):
         # file = open('./data/data.yaml','r')
         # data = yaml.load(file, Loader=yaml.FullLoader)
-        print(name, pwd)
+        print(data['name'], data['pwd'])
         self.assertEqual(1, 2)
 
     def test_2(self):
