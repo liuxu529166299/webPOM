@@ -22,6 +22,9 @@ class Test1Case(unittest.TestCase):
         lp = LoginPage(self.driver, LoginPage.url)
         self.assertTrue(lp.assert_text('liuxu', '111111'))
 
+    def test_1(self):
+        self.assertEqual(1,2)
+
     def tearDown(self) -> None:
         sleep(5)
         self.driver.quit()

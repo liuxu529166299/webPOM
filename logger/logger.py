@@ -8,7 +8,8 @@
 """
 
 import logging
-
+import time
+import os,sys
 
 # 日志类
 class LoggerInfo:
@@ -28,8 +29,14 @@ class LoggerInfo:
             sh.setLevel(logging.DEBUG)
             # 把控制器加载到日志器
             logger.addHandler(sh)
+            # log用日期命名文件夹
+            now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
+            lj = os.path.dirname(sys.argv[0])
+            # fname = "../logger/" + now + r".log"
+            fname = lj + "/logger/" + now + r".log"
             # 创建处理器，输出文本中
-            fh = logging.FileHandler('log.log', encoding='utf-8')
+            # fh = logging.FileHandler('./logger/log.log', encoding='utf-8')
+            fh = logging.FileHandler(fname, encoding='utf-8')
             fh.setFormatter(fmt)
             logger.addHandler(fh)
         return logger

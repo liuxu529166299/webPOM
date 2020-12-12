@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../api_auto_framework_pytest/.idea/api_auto_framework.iml" filepath="$PROJECT_DIR$/../api_auto_framework_pytest/.idea/api_auto_framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/webPOM.iml" filepath="$PROJECT_DIR$/.idea/webPOM.iml" />
     </modules>
   </component>
