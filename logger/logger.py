@@ -42,6 +42,6 @@ class LoggerInfo:
         return logger
 
 def input_log():
-    LoggerInfo().get_logger().info('日志打印中......')
+    LoggerInfo().get_logger().info('正在运行web自动化脚本......')
 
 input_log()
